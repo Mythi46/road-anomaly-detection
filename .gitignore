@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Local data and outputs
+data/
+models/
+runs/
+outputs/
+training_data/
+annotation_workspace/
+PoC/
+PoC-*/
+
+# Model weights and datasets
+*.pt
+*.onnx
+*.engine
+*.torchscript
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.webp
+*.mp4
+*.mov
+*.avi
+*.HEIC
+*.zip
+
+# Office/local artifacts
+*.docx
+*.xlsx
+*.pptx
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
