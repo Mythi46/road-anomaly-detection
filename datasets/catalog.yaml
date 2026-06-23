@@ -1,0 +1,219 @@
+# Public dataset catalog for road anomaly detection.
+# Keep downloaded data outside git. Use this file to track source, license,
+# annotation format, class mapping, and intended use.
+
+datasets:
+  - id: rdd2022
+    name: RDD2022 / CRDDC 2022
+    priority: A
+    source_url: https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547
+    paper_url: https://arxiv.org/abs/2209.08538
+    license: check_source
+    expected_size: "47,420 images; 55k+ instances"
+    countries: ["Japan", "India", "Czech Republic", "Norway", "United States", "China"]
+    annotation_format: "VOC/XML or challenge format; convert to YOLO"
+    source_classes: ["D00", "D10", "D20", "D40"]
+    internal_use: ["base_training", "japan_domain_support"]
+    download_status: pending
+
+  - id: rdd2020
+    name: RDD2020
+    priority: A
+    source_url: https://data.mendeley.com/datasets/5ty2wb6gvg/1
+    project_url: https://github.com/sekilab/RoadDamageDetector
+    license: check_source
+    expected_size: "26,336 images; 31k+ instances"
+    countries: ["Japan", "India", "Czech Republic"]
+    annotation_format: "VOC/XML; convert to YOLO"
+    source_classes: ["D00", "D10", "D20", "D40"]
+    internal_use: ["base_training", "baseline_comparison"]
+    download_status: pending
+
+  - id: n_rdd2024
+    name: N-RDD2024
+    priority: A
+    source_url: https://data.mendeley.com/datasets/27c8pwsd6v/3
+    license: "CC BY 4.0 per source page"
+    expected_size: "RDD2022-derived, edited labels"
+    annotation_format: "check_source"
+    source_classes: ["D00", "D10", "D20", "D30", "D40", "D50", "D60", "D70", "D80", "D90"]
+    internal_use: ["repair_negative", "hard_negative", "base_training"]
+    download_status: pending
+
+  - id: pavedistress
+    name: PaveDistress
+    priority: A
+    source_url: https://data.mendeley.com/datasets/f46zt2g83x
+    article_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11615528/
+    license: check_source
+    expected_size: "high-resolution pavement distress images"
+    annotation_format: "check_source"
+    source_classes: ["cracks", "repairs", "potholes", "background"]
+    internal_use: ["repair_negative", "hard_negative", "high_resolution_test"]
+    download_status: pending
+
+  - id: svrdd
+    name: SVRDD
+    priority: A
+    source_url: https://www.nature.com/articles/s41597-024-03263-7
+    license: check_source
+    expected_size: "8,000 images; 20,804 instances"
+    annotation_format: ["YOLO", "Pascal VOC"]
+    source_classes: ["longitudinal_crack", "transverse_crack", "alligator_crack", "pothole", "patch", "manhole_cover"]
+    internal_use: ["external_generalization", "manhole_negative", "patch_negative"]
+    download_status: pending
+
+  - id: road_damage_potholes_cracks_manholes
+    name: "Road Damage Dataset: Potholes, Cracks, and Manholes"
+    priority: A
+    source_url: https://www.nature.com/articles/s41598-026-46679-4
+    kaggle_url: https://www.kaggle.com/datasets/lorenzoarcioni/road-damage-dataset-potholes-cracks-and-manholes
+    license: "CC BY 4.0 per paper"
+    expected_size: "2,009 images; 1,261 potholes; 2,519 cracks; 957 maintenance holes"
+    annotation_format: "YOLO"
+    source_classes: ["pothole", "crack", "maintenance_hole"]
+    internal_use: ["manhole_negative", "hard_negative_eval", "extra_training"]
+    download_status: pending
+
+  - id: attain
+    name: Attain
+    priority: A
+    source_url: https://data.mendeley.com/datasets/nykrzdm74f
+    license: check_source
+    expected_size: "2,293 images; 19,761 instances"
+    annotation_format: "check_source"
+    source_classes: ["linear_cracks", "alligator_cracks", "block_cracks", "weathering", "lane_or_shoulder_dropoff", "raveling", "patching_and_utility_cuts", "manholes", "faded_markings", "potholes"]
+    internal_use: ["hard_negative", "road_marking_negative", "patch_negative"]
+    download_status: pending
+
+  - id: pavetrack
+    name: PaveTrack
+    priority: A
+    source_url: https://www.nature.com/articles/s41597-025-05748-5
+    data_url: https://doi.org/10.57760/sciencedb.20383
+    license: check_source
+    expected_size: "51,012 detection images; 8,928 tracking images"
+    annotation_format: ["YOLO", "tracking metadata", "segmentation masks"]
+    source_classes: "check_source"
+    internal_use: ["base_training", "tracking_study", "cross_frame_aggregation"]
+    download_status: pending
+
+  - id: mwpd
+    name: Multi-Weather Pothole Detection Dataset
+    priority: B
+    source_url: https://data.mendeley.com/datasets/s5hx9n2jc3
+    license: check_source
+    expected_size: "check_source"
+    annotation_format: "bounding boxes; check_source"
+    source_classes: ["pothole"]
+    internal_use: ["small_pothole_recall", "weather_robustness"]
+    download_status: pending
+
+  - id: water_filled_dry_potholes
+    name: Water-filled and Dry Potholes
+    priority: B
+    source_url: https://data.mendeley.com/datasets/tp95cdvgm8
+    license: check_source
+    expected_size: "images and dashcam-derived frames"
+    annotation_format: ["Pascal VOC", "YOLO"]
+    source_classes: ["pothole"]
+    internal_use: ["wet_condition_test", "puddle_confusion"]
+    download_status: pending
+
+  - id: road_damage_vision
+    name: RoadDamageVision
+    priority: B
+    source_url: https://data.mendeley.com/datasets/ypm4h4z25c
+    license: "CC BY 4.0 per source page"
+    expected_size: "7,647 instances"
+    annotation_format: "check_source"
+    source_classes: ["D00", "D10", "D20", "D40", "Repair", "Block Crack"]
+    internal_use: ["repair_examples", "auxiliary_training"]
+    caution: "drone viewpoint differs from dashcam"
+    download_status: pending
+
+  - id: pavement_distress_dataset
+    name: Pavement Distress Dataset
+    priority: B
+    source_url: https://data.mendeley.com/datasets/cbm6dkvggn
+    license: check_source
+    expected_size: "6,200 asphalt images; 4,344 concrete pavement images"
+    annotation_format: "check_source"
+    source_classes: "check_source"
+    internal_use: ["background_negative", "external_robustness"]
+    download_status: pending
+
+  - id: cracks_potholes_road_images
+    name: Cracks and Potholes in Road Images
+    priority: B
+    source_url: https://data.mendeley.com/datasets/t576ydh9v8/4
+    license: check_source
+    expected_size: "2,235 images"
+    annotation_format: "segmentation masks"
+    source_classes: ["road", "crack", "pothole"]
+    internal_use: ["segmentation_to_box_experiment"]
+    download_status: pending
+
+  - id: gaps
+    name: German Asphalt Pavement Distress Dataset / GAPs
+    priority: B
+    source_url: https://www.tu-ilmenau.de/en/university/departments/department-of-computer-science-and-automation/profile/institutes-and-groups/institute-of-computer-and-systems-engineering/group-for-neuroinformatics-and-cognitive-robotics/data-sets-code/german-asphalt-pavement-distress-dataset-gaps
+    license: check_source
+    expected_size: "1,969 HD images; chunked patch data"
+    annotation_format: "binary distress patches; detailed classes described in paper"
+    source_classes: ["crack", "pothole", "inlaid_patch", "applied_patch", "open_joint", "bleeding"]
+    internal_use: ["patch_negative", "surface_morphology_study"]
+    download_status: pending
+
+  - id: street_surface_vis
+    name: StreetSurfaceVis
+    priority: B
+    source_url: https://www.nature.com/articles/s41597-024-04295-9
+    data_url: https://zenodo.org/records/11449977
+    license: check_source
+    expected_size: "9,122 street-level images"
+    annotation_format: "surface type / quality labels"
+    source_classes: "surface quality, not object boxes"
+    internal_use: ["surface_quality_auxiliary", "domain_classification"]
+    download_status: pending
+
+  - id: cnrdd
+    name: CNRDD
+    priority: B
+    source_url: https://www.mdpi.com/2076-3417/12/15/7594
+    license: check_source
+    expected_size: "check_source"
+    annotation_format: "check_source"
+    source_classes: "eight categories with severity levels"
+    internal_use: ["severity_study", "domain_study"]
+    download_status: pending
+
+class_mapping:
+  D00: crack
+  D10: crack
+  D20: crack
+  D30: repair_negative
+  D40: pothole
+  D50: neutral_negative
+  D60: neutral_negative
+  D70: neutral_negative
+  D80: repair_negative
+  D90: deferred_damage
+  repair: repair_negative
+  patch: repair_negative
+  patching_and_utility_cuts: repair_negative
+  manhole: neutral_negative
+  maintenance_hole: neutral_negative
+  road_marking: neutral_negative
+  faded_markings: neutral_negative
+
+download_order:
+  - rdd2022
+  - n_rdd2024
+  - pavedistress
+  - svrdd
+  - road_damage_potholes_cracks_manholes
+  - attain
+  - pavetrack
+  - mwpd
+  - water_filled_dry_potholes
