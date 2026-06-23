@@ -19,7 +19,7 @@ datasets:
   - id: rdd2020
     name: RDD2020
     priority: A
-    source_url: https://data.mendeley.com/datasets/5ty2wb6gvg/1
+    source_url: https://data.mendeley.com/datasets/5ty2wb6gvg/2
     project_url: https://github.com/sekilab/RoadDamageDetector
     license: check_source
     expected_size: "26,336 images; 31k+ instances"
@@ -43,7 +43,7 @@ datasets:
   - id: pavedistress
     name: PaveDistress
     priority: A
-    source_url: https://data.mendeley.com/datasets/f46zt2g83x
+    source_url: https://data.mendeley.com/datasets/f46zt2g83x/1
     article_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11615528/
     license: check_source
     expected_size: "high-resolution pavement distress images"
@@ -56,6 +56,7 @@ datasets:
     name: SVRDD
     priority: A
     source_url: https://www.nature.com/articles/s41597-024-03263-7
+    zenodo_url: https://zenodo.org/records/10100129
     license: check_source
     expected_size: "8,000 images; 20,804 instances"
     annotation_format: ["YOLO", "Pascal VOC"]
@@ -67,6 +68,7 @@ datasets:
     name: "Road Damage Dataset: Potholes, Cracks, and Manholes"
     priority: A
     source_url: https://www.nature.com/articles/s41598-026-46679-4
+    zenodo_url: https://zenodo.org/records/17834373
     kaggle_url: https://www.kaggle.com/datasets/lorenzoarcioni/road-damage-dataset-potholes-cracks-and-manholes
     license: "CC BY 4.0 per paper"
     expected_size: "2,009 images; 1,261 potholes; 2,519 cracks; 957 maintenance holes"
@@ -78,7 +80,7 @@ datasets:
   - id: attain
     name: Attain
     priority: A
-    source_url: https://data.mendeley.com/datasets/nykrzdm74f
+    source_url: https://data.mendeley.com/datasets/nykrzdm74f/1
     license: check_source
     expected_size: "2,293 images; 19,761 instances"
     annotation_format: "check_source"
@@ -101,7 +103,7 @@ datasets:
   - id: mwpd
     name: Multi-Weather Pothole Detection Dataset
     priority: B
-    source_url: https://data.mendeley.com/datasets/s5hx9n2jc3
+    source_url: https://data.mendeley.com/datasets/s5hx9n2jc3/2
     license: check_source
     expected_size: "check_source"
     annotation_format: "bounding boxes; check_source"
@@ -112,7 +114,7 @@ datasets:
   - id: water_filled_dry_potholes
     name: Water-filled and Dry Potholes
     priority: B
-    source_url: https://data.mendeley.com/datasets/tp95cdvgm8
+    source_url: https://data.mendeley.com/datasets/tp95cdvgm8/1
     license: check_source
     expected_size: "images and dashcam-derived frames"
     annotation_format: ["Pascal VOC", "YOLO"]
@@ -123,7 +125,7 @@ datasets:
   - id: road_damage_vision
     name: RoadDamageVision
     priority: B
-    source_url: https://data.mendeley.com/datasets/ypm4h4z25c
+    source_url: https://data.mendeley.com/datasets/ypm4h4z25c/3
     license: "CC BY 4.0 per source page"
     expected_size: "7,647 instances"
     annotation_format: "check_source"
@@ -135,7 +137,7 @@ datasets:
   - id: pavement_distress_dataset
     name: Pavement Distress Dataset
     priority: B
-    source_url: https://data.mendeley.com/datasets/cbm6dkvggn
+    source_url: https://data.mendeley.com/datasets/cbm6dkvggn/1
     license: check_source
     expected_size: "6,200 asphalt images; 4,344 concrete pavement images"
     annotation_format: "check_source"

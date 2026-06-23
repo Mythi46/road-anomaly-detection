@@ -56,6 +56,20 @@ python -m venv .venv
 pip install -r RoadAnomalyDetection\requirements.txt
 ```
 
+## Colab Pro+ Baseline Training
+
+Open the training notebook directly in Colab:
+
+[road_anomaly_colab_baseline.ipynb](https://colab.research.google.com/github/Mythi46/road-anomaly-detection/blob/main/notebooks/road_anomaly_colab_baseline.ipynb)
+
+Recommended first run:
+
+1. Runtime -> Change runtime type -> GPU.
+2. Keep `RUN_MODE = "fast"` for the first baseline.
+3. Run cells from top to bottom.
+4. Training outputs and model weights are saved under
+   `MyDrive/road-anomaly-detection/runs/`.
+
 ## Run Prediction
 
 ```powershell
