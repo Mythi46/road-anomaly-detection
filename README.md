@@ -99,6 +99,36 @@ Run:
 python -m RoadAnomalyDetection.evaluate --csv outputs\eval.csv
 ```
 
+## Public Baseline Utilities
+
+Build a combined public-data YAML:
+
+```powershell
+python scripts\write_combined_yolo_yaml.py `
+  --converted-root data\public\converted `
+  --output data\public\combined_fast.yaml
+```
+
+Build a hard-negative-biased manifest for a second training pass:
+
+```powershell
+python scripts\build_hard_negative_manifest.py `
+  --input-yaml data\public\combined_fast.yaml `
+  --output-dir data\public\hardneg_v2 `
+  --repair-extra 8 `
+  --neutral-extra 4 `
+  --mixed-extra 1
+```
+
+Evaluate the 5-class public baseline on local PoC before/after folders:
+
+```powershell
+python scripts\evaluate_public_baseline_poc.py `
+  --model RoadDetection_v8\runs\local_public_fast_yolo26s_e30\weights\best.pt `
+  --csv RoadAnomalyDetection\outputs\public_baseline_poc_eval.csv `
+  --annotated-dir RoadAnomalyDetection\outputs\public_baseline_poc_mistakes
+```
+
 ## Technical Notes
 
 The key design principle is precision-first operation:

@@ -41,6 +41,8 @@ def candidate_image_dirs(dataset_dir: Path, split: str) -> list[Path]:
         dataset_dir / split / "images",
         dataset_dir / "images" / split,
     ]
+    if split == "train":
+        candidates.append(dataset_dir / "images")
     return [path for path in candidates if path.exists()]
 
 
