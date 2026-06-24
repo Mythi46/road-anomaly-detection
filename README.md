@@ -129,6 +129,32 @@ python scripts\evaluate_public_baseline_poc.py `
   --annotated-dir RoadAnomalyDetection\outputs\public_baseline_poc_mistakes
 ```
 
+Build and evaluate a second-stage crop suppressor:
+
+```powershell
+python scripts\build_suppressor_crops.py `
+  --input-yaml data\public\combined_fast.yaml `
+  --output-dir data\public\suppressor_crops_v1 `
+  --clean
+
+python scripts\train_suppressor_classifier.py `
+  --data-dir data\public\suppressor_crops_v1 `
+  --output-dir RoadAnomalyDetection\outputs\suppressor_v1
+
+python scripts\evaluate_public_with_suppressor.py `
+  --model RoadDetection_v8\runs\local_public_hardneg_v2_yolo26s_e20\weights\best.pt `
+  --suppressor RoadAnomalyDetection\outputs\suppressor_v1\best.pt `
+  --csv RoadAnomalyDetection\outputs\poc_with_suppressor.csv
+```
+
+Prepare a hard-negative review pack from false positives:
+
+```powershell
+python scripts\prepare_hard_negative_review_pack.py `
+  --eval-csv RoadAnomalyDetection\outputs\poc_with_suppressor.csv `
+  --output-dir annotation_workspace\hard_negative_review
+```
+
 ## Technical Notes
 
 The key design principle is precision-first operation:
